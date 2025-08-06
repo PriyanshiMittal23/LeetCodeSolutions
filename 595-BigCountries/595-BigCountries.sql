@@ -1,0 +1,5 @@
+-- Last updated: 6/8/2025, 11:10:46 pm
+# Write your MySQL query statement below
+SELECT NAME,POPULATION,AREA FROM WORLD 
+WHERE 
+AREA>=3000000 OR POPULATION>=25000000;
