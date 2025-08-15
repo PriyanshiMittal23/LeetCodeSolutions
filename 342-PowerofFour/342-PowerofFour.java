@@ -1,4 +1,4 @@
-// Last updated: 15/8/2025, 4:40:17 pm
+// Last updated: 15/8/2025, 4:44:02 pm
 class Solution {
     public boolean isPowerOfFour(int n) {
         int c=0;
@@ -7,12 +7,8 @@ class Solution {
         if(n<=0){
             return false;
         }
-        while(n>0){
-            n = (n&(n-1));
-            c++;
-            if(c>1){
-                return false;
-            }
+        if((n&(n-1))!=0){
+            return false;
         }
         while(t>0){
             t= (t>>1);
