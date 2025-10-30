@@ -1,18 +1,10 @@
-// Last updated: 30/10/2025, 10:52:02 pm
+// Last updated: 30/10/2025, 10:53:57 pm
 class Solution {
     public int minNumberOperations(int[] target) {
-        int ans = 0;
-        int i = 0;
-        while(i<target.length-1 && target[i]<target[i+1]){
-            i++;
+        int min = target[0];
+        for (int i = 1; i < target.length; i++) {
+            min += Math.max(target[i] - target[i - 1], 0);
         }
-        ans+= target[i++];
-        while(i<target.length){
-            if(target[i]>target[i-1]){
-                ans+= target[i]-target[i-1];
-            }
-            i++;
-        }
-        return ans;
+        return min;
     }
 }
