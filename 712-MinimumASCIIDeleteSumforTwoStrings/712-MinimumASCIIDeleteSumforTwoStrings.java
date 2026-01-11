@@ -1,4 +1,4 @@
-// Last updated: 11/1/2026, 3:37:14 pm
+// Last updated: 11/1/2026, 3:37:39 pm
 1class Solution {
 2    public int minimumDeleteSum(String s1, String s2) {
 3        int ts = 0;
@@ -32,14 +32,4 @@
 31        }
 32        return ts- 2*dp[s1.length()-1][s2.length()-1];
 33    }
-34
-35    public void hcs(String s1, String s2, int[][]dp, int i, int j){
-36        if(i>= s1.length() || j>=s2.length()){
-37            return;
-38        }
-39
-40        
-41        hcs(s1,s2,dp,i+1,j+1);
-42        // return dp[i][j];
-43    }
-44}
+34}
