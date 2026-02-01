@@ -1,13 +1,19 @@
-// Last updated: 1/2/2026, 10:30:59 pm
-1class Solution {
-2    public int minimumCost(int[] nums) {
-3        int ans = nums[0];
-4        int[]arr = new int[nums.length-1];
-5        for(int i=1;i<nums.length;i++){
-6            arr[i-1]=nums[i];
-7        }
-8        Arrays.sort(arr);
-9        ans+=arr[0]+arr[1];
-10        return ans;
-11    }
-12}
+// Last updated: 1/2/2026, 10:36:04 pm
+class Solution {
+    public int minimumCost(int[] nums) {
+         int first = nums[0];
+        int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < min1) {
+                min2 = min1;
+                min1 = nums[i];
+            } else if (nums[i] < min2) {
+                min2 = nums[i];
+            }
+        }
+
+        return first + min1 + min2;
+    }
+}
